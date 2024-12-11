@@ -174,7 +174,3 @@ section.hero {
 .text-block-wrapper a {
     text-decoration: none;
 }
-
-.project:hover {
-    transform: scale(1.05);
-}
