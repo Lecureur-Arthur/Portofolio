@@ -163,3 +163,18 @@ section.hero {
 .experience ul {
     margin-left: 0;
 }
+
+.project{
+    width: 400px;
+    height: 120px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.text-block-wrapper a {
+    text-decoration: none;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
