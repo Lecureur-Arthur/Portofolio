@@ -117,3 +117,49 @@ section.hero {
     align-items: center;
     justify-content: center;
 }
+
+.etude {
+    width: 100%; /* Chaque bloc prend environ 45% de la largeur de la section */
+    max-width: 1000px;
+}
+
+.experience {
+    width: 500px;
+}
+
+#title-experience {
+    font-weight: bold;
+    color: #d6af6a;
+}
+
+.experience h3 {
+    color: #d6af6a;
+    font-size: xx-large;
+}
+
+.experience ul {
+    list-style-position: inside; /* Positionne les puces à l'intérieur de la zone de texte */
+    padding-left: 20px; /* Ajoute un léger décalage à gauche */
+    margin-left: 40px; /* Décale la liste à droite par rapport au texte précédent */
+    list-style-type: square;
+}
+
+.experience ul li {
+    text-align: left; /* Aligne le texte à gauche */
+    margin-bottom: 10px; /* Espace entre les éléments de la liste */
+}
+
+.hero .container .text-block-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espace entre les blocs */
+}
+
+.experience p {
+    text-align: left;
+}
+
+.experience ul {
+    margin-left: 0;
+}
