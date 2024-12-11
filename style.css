@@ -103,3 +103,17 @@ footer a:hover {
     background-color: #4b3a27;
     color: #e0e0e0;
 }
+
+section.hero {
+    padding: 25px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #333;
+    border: 3px solid #9b7b55;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
