@@ -3,69 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - LECUREUR Arthur</title>
+    <title>Projets - Arthur Lecureur</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     
-    <header class="navbar">
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="projects.html">Projets</a></li>
-                <li><a href="experience.html">Expériences</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header class="navbar"></header>
 
     <main>
 
         <section class="hero">
             <div class="container">
-                <h1>Mes Projets</h1>
-                <p>Voici une sélection de mes projets récents dans le domaine de l'ingénierie et du développement.</p>
+                <img src="images/Moi.jpg" alt="Arthur Lecureur" class="profile-photo">
+                <h1>Mes Explorations</h1>
+                <p style="font-size: 1.1em; color: var(--text-light);">
+                    Voici une sélection de mes projets récents. Du développement mobile à la réalité virtuelle, chaque projet est une nouvelle île explorée dans l'océan du code.
+                </p>
             </div>
         </section>
 
         <section class="hero">
             <div class="container">
-                <h2>Liste de mes projets</h2>
+                <h2>Galerie de Projets</h2>
                 <div class="text-block-wrapper">
+                    
+                    <a href="projects/permafrost.html">
+                        <div class="text-block project">
+                            <h3>Permafrost (Unreal Engine 5)</h3>
+                            <p>
+                                Un FPS de survie intense dans une base spatiale labyrinthique. 
+                                Affrontez des hordes de zombies-robots, frayez-vous un chemin à travers les secteurs infectés et atteignez l'ascenseur orbital pour vous échapper.
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="projects/terrapolis.html">
+                        <div class="text-block project">
+                            <h3>Terrapolis (Python & Unity AR)</h3>
+                            <p>
+                                Un système hybride de gestion urbaine. 
+                                Une application Python simule la viabilité et les ressources d'une ville, tandis qu'une interface en Réalité Augmentée (Unity) permet de la construire et de la visualiser en 3D.
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="projects/augmonia.html">
+                        <div class="text-block project">
+                            <h3>Augmonia (AR Mobile)</h3>
+                            <p>
+                                Une expérience de survie en Réalité Augmentée sur Unity. 
+                                Scannez votre environnement, lancez le dé du destin et défendez votre salon contre des vagues d'araignées virtuelles à l'aide de projectiles !
+                            </p>
+                        </div>
+                    </a>
+
                     <a href="projects/eddm-vr.html">
                         <div class="text-block project">
-                            <h3>Evasion du donjon maudit </h3>
-                            <p>Un jeu VR se déroulant dans un donjon magique, avec des énigmes à résoudre pour libérer une créature mystique.</p>
+                            <h3>Évasion du Donjon Maudit (VR)</h3>
+                            <p>Une aventure immersive en Réalité Virtuelle. Résolvez des énigmes ancestrales pour vous échapper d'un donjon magique avant qu'il ne soit trop tard.</p>
                         </div>
                     </a>
 
                     <a href="projects/collecto-manga.html">
                         <div class="text-block project">
-                            <h3>Collecto'Manga </h3>
-                            <p>Une application permettant de gérer ses mangas</p>
+                            <h3>Collecto'Manga (Android)</h3>
+                            <p>L'application indispensable pour les passionnés. Gérez votre bibliothèque, suivez vos lectures chapitre par chapitre et ne ratez plus aucune sortie.</p>
                         </div>
                     </a>
                     
                     <a href="projects/solas.html">
                         <div class="text-block project">
-                            <h3>SOLAS</h3>
-                            <p>Un jeu VR d'exploration spatiale où le joueur découvre différentes planètes.</p>
+                            <h3>SOLAS (VR)</h3>
+                            <p>Une odyssée spatiale en VR. Explorez le système solaire et réparez votre vaisseau après une collision dans la ceinture d'astéroïdes.</p>
                         </div>
                     </a>
+
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer>
-        <section class="contact-info">
-            <h2>Me Contacter</h2>
-            <p><strong>Email :</strong> <a href="mailto:arthur.lecureur@gmail.com">arthur.lecureur@gmail.com</a></p>
-            <p><strong>Téléphone :</strong> +33 7 81 68 01 85</p>
-        </section>
-        <p>© 2024 Arthur Lecureur - Navigateur des codes & aventure</p>
-    </footer>
+    <footer></footer>
+
+    <script src="js/layout.js"></script>
 
 </body>
 </html>
