@@ -1,238 +1,296 @@
-/* --- VARIABLES GLOBALES & RESET --- */
-:root {
-    /* Nouvelle palette de couleurs harmonisée */
-    --bg-main: #0f172a;      /* Bleu nuit profond (océan/espace) */
-    --bg-secondary: #1e293b; /* Bleu un peu plus clair pour les cartes */
-    --accent-gold: #fbbf24;  /* Or éclatant pour les titres et boutons */
-    --accent-hover: #d97706; /* Or plus foncé au survol */
-    --text-light: #e2e8f0;   /* Blanc cassé pour le texte principal */
-    --text-muted: #94a3b8;   /* Gris clair pour les textes secondaires */
+/* =========================================
+   1. VARIABLES & CONFIGURATION GLOBALE
+   ========================================= */
+   :root {
+    /* Palette de couleurs "Explorateur Moderne" */
+    --bg-deep: #0f172a;       /* Fond principal (Abysses) */
+    --bg-card: #1e293b;       /* Fond des cartes (Coque vaisseau/Carte) */
+    --bg-card-hover: #334155; /* Fond au survol */
+    
+    --accent-gold: #fbbf24;   /* Or éclatant (Trésor/Interface) */
+    --accent-dark: #d97706;   /* Or sombre pour les ombres/survol */
+    
+    --text-main: #f1f5f9;     /* Blanc cassé (Lisibilité optimale) */
+    --text-muted: #94a3b8;    /* Gris bleuté pour les sous-titres */
     
     /* Polices */
-    --font-title: 'Treasure Map Deadhand', cursive; /* Ta police originale pour le fun */
-    --font-body: 'Poppins', sans-serif; /* Police pro pour la lisibilité */
+    --font-title: 'Treasure Map Deadhand', cursive; /* Titres H1 uniquement */
+    --font-body: 'Poppins', sans-serif;             /* Tout le reste */
 }
 
+/* Reset pour que les tailles incluent les bordures */
 * {
-    box-sizing: border-box; /* Important pour la gestion des tailles */
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Défilement fluide */
 }
 
 body {
     font-family: var(--font-body);
-    background-color: var(--bg-main);
-    /* Petit dégradé subtil dans le fond pour donner de la profondeur */
-    background-image: radial-gradient(circle at top center, #1e293b 0%, var(--bg-main) 70%);
-    color: var(--text-light);
+    background-color: var(--bg-deep);
+    /* Dégradé subtil pour donner de la profondeur à l'écran */
+    background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, var(--bg-deep) 75%);
+    background-attachment: fixed; /* Le fond reste fixe quand on scroll */
+    color: var(--text-main);
     margin: 0;
     padding: 0;
-    line-height: 1.7; /* Améliore la lisibilité */
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-h1, h2, h3 {
+/* =========================================
+   2. TYPOGRAPHIE
+   ========================================= */
+h1, h2, h3, h4 {
     color: var(--accent-gold);
-    font-weight: 600;
     margin-top: 0;
+    line-height: 1.3;
 }
 
-/* Seul le titre principal garde la police "Pirate" pour le style */
+/* Le H1 garde le style Pirate/Carte au trésor */
 h1 {
     font-family: var(--font-title);
-    font-size: 3rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 3.5rem; /* Très grand */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    border-bottom: 2px solid rgba(251, 191, 36, 0.2);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--text-main); /* Les titres de cartes sont blancs */
+    margin-bottom: 15px;
 }
 
 a {
     text-decoration: none;
     color: var(--accent-gold);
     transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 a:hover {
-    color: var(--accent-hover);
+    color: var(--accent-dark);
 }
 
-/* --- HEADER & NAVIGATION --- */
+/* =========================================
+   3. HEADER & NAVIGATION (Compatible JS Layout)
+   ========================================= */
 header.navbar {
-    background-color: rgba(15, 23, 42, 0.95); /* Fond semi-transparent */
-    backdrop-filter: blur(10px); /* Effet de flou moderne derrière le menu */
+    background-color: rgba(15, 23, 42, 0.85); /* Semi-transparent */
+    backdrop-filter: blur(12px); /* Effet de verre dépoli moderne */
+    border-bottom: 1px solid rgba(251, 191, 36, 0.3);
     padding: 15px 0;
-    border-bottom: 2px solid var(--accent-gold);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    position: sticky; /* Le menu reste en haut quand on scroll */
+    position: sticky; /* Reste collé en haut */
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
+/* Ciblage précis car le HTML est injecté par JS */
 header nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Pour les petits écrans */
-}
-
-header nav ul li {
-    margin: 5px 20px;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 header nav ul li a {
-    color: var(--text-light);
-    font-weight: 500;
-    font-size: 1.1em;
+    color: var(--text-main);
+    font-size: 1.1rem;
+    padding: 5px 0;
     position: relative;
 }
 
-/* Petit effet de soulignement doré au survol du menu */
+/* Animation de soulignement doré */
 header nav ul li a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -5px;
+    bottom: 0;
     left: 0;
     background-color: var(--accent-gold);
-    transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--accent-gold);
 }
 
 header nav ul li a:hover::after {
     width: 100%;
 }
 
-header nav ul li a:hover {
-    color: var(--accent-gold);
-    transform: none; /* Suppression de la rotation de l'ancien CSS */
-}
-
-/* --- MAIN CONTAINER & SECTIONS --- */
+/* =========================================
+   4. STRUCTURE PRINCIPALE
+   ========================================= */
 main {
-    padding: 30px 15px;
-    min-height: 80vh; /* S'assure que le footer reste en bas */
+    flex: 1; /* Pousse le footer vers le bas */
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Conteneur Hero (La "Carte" principale) */
 section.hero {
-    max-width: 900px;
-    margin: 30px auto;
-    /* Style "Carte" moderne */
-    background-color: var(--bg-secondary);
+    background-color: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
     padding: 40px;
-    border-radius: 15px; /* Coins arrondis */
-    border: 1px solid rgba(251, 191, 36, 0.2); /* Bordure dorée subtile */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre portée pour la profondeur */
+    margin-bottom: 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
+/* Conteneur flex générique */
 .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    text-align: center;
     margin-bottom: 30px;
 }
 
-/* Photo de profil avec effet "Halo" doré */
+/* Photo de profil (Halo doré) */
 .profile-photo {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     border: 4px solid var(--accent-gold);
-    width: 160px;
-    height: 160px;
-    margin-bottom: 25px;
     object-fit: cover;
-    box-shadow: 0 0 25px rgba(251, 191, 36, 0.4);
+    margin-bottom: 20px;
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.3); /* Lueur */
     transition: transform 0.3s ease;
 }
 
 .profile-photo:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) rotate(2deg);
 }
 
-.container h2 {
-    color: var(--text-muted);
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 10px;
+/* =========================================
+   5. GRILLES & CARTES (Le cœur du design)
+   ========================================= */
+
+/* Le Wrapper Grille : Gère l'alignement */
+.text-block-wrapper {
+    display: grid;
+    /* Colonnes auto-adaptables, min 320px de large */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px;
+    width: 100%;
+    align-items: stretch; /* FORCE TOUTES LES CARTES A LA MEME HAUTEUR */
 }
 
-/* --- BLOCS DE TEXTE (Redesign complet) --- */
-/* On supprime la différence entre .text-block et .alternate */
-/* Ils deviennent des sous-cartes élégantes */
-.text-block, .text-block.alternate {
-    background-color: rgba(15, 23, 42, 0.6); /* Plus foncé que le hero */
+/* Style de base pour TOUTES les cartes (.text-block) */
+.text-block, .text-block.project, .text-block.etude, .text-block.experience {
+    background-color: var(--bg-card);
+    border-radius: 12px;
     padding: 30px;
-    border-radius: 10px;
-    margin: 25px 0;
-    border-left: 4px solid var(--accent-gold); /* Juste une barre dorée sur le côté */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    font-style: normal; /* Plus d'italique partout, c'est dur à lire */
     text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    /* Flexbox pour gérer le contenu interne */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Remplit la cellule de la grille */
 }
 
-.text-block h3 {
-    margin-bottom: 15px;
-    font-size: 1.4em;
+/* --- SPÉCIFIQUE : CARTES PROJETS (CLIQUABLES) --- */
+
+/* Le lien <a> qui entoure la carte */
+a:has(.text-block.project) {
+    display: block;
+    height: 100%; /* Important pour que le lien couvre toute la grille */
 }
 
-/* --- BOUTONS (Lien "Voir mes projets") --- */
-/* Pour cibler le lien spécifique dans ton index.html */
-div[style*="margin-top: 25px;"] a {
-    /* On écrase les styles en ligne pour un style CSS propre */
-    background: linear-gradient(135deg, var(--accent-gold), var(--accent-hover)) !important;
-    color: var(--bg-main) !important;
-    border: none !important;
-    box-shadow: 0 5px 15px rgba(251, 191, 36, 0.4) !important;
-    padding: 15px 35px !important;
-    font-family: var(--font-body);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.text-block.project {
+    position: relative; /* Pour positionner l'indice visuel */
+    padding-bottom: 60px; /* Laisse de la place en bas pour "En savoir plus" */
+    border-left: 4px solid transparent; /* Prépare la bordure gauche */
 }
 
-div[style*="margin-top: 25px;"] a:hover {
-    transform: translateY(-3px) !important; /* Petit effet de levier au survol */
-    box-shadow: 0 8px 20px rgba(251, 191, 36, 0.6) !important;
-}
-
-
-/* --- FOOTER --- */
-footer {
-    background-color: var(--bg-secondary);
+/* Le paragraphe prend toute la place dispo pour pousser le bas */
+.text-block.project p {
+    flex-grow: 1;
+    margin-bottom: 0;
     color: var(--text-muted);
-    text-align: center;
-    padding: 40px 0;
-    border-top: 2px solid rgba(251, 191, 36, 0.2);
-    margin-top: auto; /* Pousse le footer en bas si la page est courte */
 }
 
-footer h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-footer a {
-    color: var(--accent-gold);
-    text-decoration: none;
+/* L'indice visuel "En savoir plus" */
+.text-block.project::after {
+    content: 'En savoir plus \2192'; /* Flèche unicode */
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+    font-size: 0.9rem;
     font-weight: 600;
+    color: var(--accent-gold);
+    opacity: 0.6;
+    transition: all 0.3s ease;
 }
 
-footer a:hover {
-    text-decoration: underline;
+/* --- INTERACTIONS AU SURVOL (HOVER) --- */
+
+/* Quand on survole le lien du projet */
+a:hover .text-block.project {
+    transform: translateY(-8px); /* La carte monte */
+    background-color: var(--bg-card-hover);
+    border-left-color: var(--accent-gold); /* Bordure dorée apparaît */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* --- CSS Spécifique aux autres pages (Expérience, Projets...) --- */
+/* Animation de la flèche "En savoir plus" */
+a:hover .text-block.project::after {
+    opacity: 1;
+    transform: translateX(5px); /* La flèche bouge vers la droite */
+}
 
-/* Listes dans Experience */
+/* Survol pour les cartes non-liens (compétences, etc.) */
+.text-block:not(.project):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   6. STYLES SPÉCIFIQUES (Expérience, Études)
+   ========================================= */
+
+/* Listes d'expérience */
 .experience ul {
-    list-style-type: none; /* On retire les puces carrées moches */
-    padding-left: 15px;
+    list-style: none;
+    padding-left: 10px;
+    margin-top: 15px;
 }
 
-/* On remplace les puces par des petits tirets dorés */
 .experience ul li {
     position: relative;
     padding-left: 25px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
+    color: var(--text-muted);
 }
 
+/* Tiret doré personnalisé */
 .experience ul li::before {
     content: '—';
     color: var(--accent-gold);
@@ -241,74 +299,113 @@ footer a:hover {
     font-weight: bold;
 }
 
+/* Labels dans l'expérience (Période, Lieu...) */
 #title-experience {
     color: var(--accent-gold);
     font-weight: 600;
     margin-right: 5px;
+    display: inline-block;
 }
 
-/* Grille pour les projets et compétences */
-.text-block-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grille responsive auto */
-    gap: 25px;
-    justify-content: center;
-}
-
-/* Style des cartes Projets */
-.text-block.project, .text-block-link, .text-block.etude, .text-block.experience {
-    width: 100% !important; /* Force la largeur dans la grille */
-    max-width: none !important; /* Enlève les limites précédentes */
-    height: auto !important;
-    margin: 0; /* Géré par le gap de la grille */
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    border: 1px solid transparent; /* Prépare la bordure au survol */
-}
-
-/* Effet au survol des cartes projets */
-.text-block.project:hover, .text-block-link:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-gold);
-    box-shadow: 0 10px 25px rgba(251, 191, 36, 0.2);
-}
-
-/* Images dans les pages projets */
+/* =========================================
+   7. IMAGES DANS LES PROJETS
+   ========================================= */
 figure {
     margin: 30px 0;
     text-align: center;
 }
 
 figure img {
-    max-width: 100%; /* Responsive */
+    max-width: 100%;
     height: auto;
-    border-radius: 12px;
-    border: 3px solid var(--bg-secondary); /* Bordure plus subtile */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border: 2px solid rgba(251, 191, 36, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 figcaption {
     color: var(--text-muted);
     font-style: italic;
+    font-size: 0.9rem;
     margin-top: 10px;
-    font-size: 0.9em;
 }
 
-/* Responsive basique pour mobile */
+/* =========================================
+   8. FOOTER (Compatible JS Layout)
+   ========================================= */
+footer {
+    background-color: var(--bg-deep);
+    border-top: 1px solid rgba(251, 191, 36, 0.2);
+    padding: 50px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+footer p {
+    color: var(--text-muted);
+}
+
+footer a {
+    color: var(--text-main);
+    margin: 0 10px;
+    position: relative;
+}
+
+footer a:hover {
+    color: var(--accent-gold);
+}
+
+/* =========================================
+   9. BOUTON D'ACTION (Accueil)
+   ========================================= */
+/* Cible le lien "Voir mes projets" sur la page d'accueil */
+div[style*="margin-top: 25px;"] a {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-dark)) !important;
+    color: var(--bg-deep) !important;
+    padding: 15px 40px !important;
+    border-radius: 50px !important; /* Bouton arrondi */
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3) !important;
+    border: none !important;
+}
+
+div[style*="margin-top: 25px;"] a:hover {
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 10px 25px rgba(251, 191, 36, 0.5) !important;
+}
+
+/* =========================================
+   10. RESPONSIVE (Mobile)
+   ========================================= */
 @media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    header nav ul {
+        gap: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
     section.hero {
         padding: 20px;
     }
     
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    header nav ul {
-        flex-direction: column;
+    .text-block-wrapper {
+        grid-template-columns: 1fr; /* 1 seule colonne sur mobile */
     }
     
-    header nav ul li {
-        margin: 10px 0;
+    .profile-photo {
+        width: 140px;
+        height: 140px;
     }
 }
