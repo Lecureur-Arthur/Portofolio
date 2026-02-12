@@ -524,3 +524,95 @@ div[style*="margin-top: 25px;"] a:hover {
     color: var(--accent-gold);
     margin-top: 10px;
 }
+
+/* =========================================
+   12. PAGE COMING SOON / 404
+   ========================================= */
+
+/* Permet de centrer le contenu verticalement si la page est vide */
+.main-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh; /* Prend au moins 70% de la hauteur de l'écran */
+    text-align: center;
+}
+
+.coming-soon-container {
+    background-color: var(--bg-card);
+    padding: 50px;
+    border-radius: 20px;
+    border: 1px solid rgba(251, 191, 36, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    margin: 0 20px;
+}
+
+.coming-soon-container h1 {
+    color: var(--accent-gold);
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.coming-soon-container p {
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+/* Bouton de retour stylisé */
+.btn-return {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    border: 2px solid var(--accent-gold);
+    color: var(--accent-gold);
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-return:hover {
+    background-color: var(--accent-gold);
+    color: var(--bg-deep);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3);
+}
+
+/* --- ANIMATION PLANÈTE --- */
+.planet-loader {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+/* L'orbite (cercle fin) */
+.planet-orbit {
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* La planète (boule dorée qui tourne) */
+.planet {
+    width: 16px;
+    height: 16px;
+    background-color: var(--accent-gold);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 32px; /* Centré horizontalement (80/2 - 16/2) */
+    transform-origin: 8px 40px; /* Le point de pivot est au centre de l'orbite */
+    animation: orbitSpin 2s linear infinite;
+    box-shadow: 0 0 10px var(--accent-gold);
+}
+
+@keyframes orbitSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

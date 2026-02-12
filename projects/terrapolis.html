@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terrapolis - Arthur Lecureur</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    
+    <header class="navbar"></header>
+
+    <main>
+
+        <section class="hero">
+            <div class="container">
+                <h1>TERRAPOLIS</h1>
+                <p class="hero-subtitle">
+                    Gestion Urbaine Hybride : Simulation Python & Visualisation AR
+                </p>
+                <figure class="figure-hero">
+                    <img src="../images/projets/terrapolis/Hero.png" alt="Vue d'ensemble de Terrapolis">
+                    <figcaption>La ville de demain, gérée par la donnée et visualisée dans votre salon.</figcaption>
+                </figure>
+            </div>
+            
+            <div class="text-block">
+                <h3>Le Concept</h3>
+                <p>
+                    <strong>Terrapolis</strong> n'est pas un simple jeu de construction. C'est un système complexe divisé en deux applications distinctes qui communiquent en temps réel.
+                    L'objectif est de construire une <strong>ville viable</strong>, en trouvant l'équilibre parfait entre développement industriel, bien-être des habitants et écologie.
+                </p>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Une Architecture Bicéphale</h2>
+                <p>Le projet repose sur la communication réseau (Sockets) entre deux entités.</p>
+                
+                <figure class="figure-content">
+                    <img src="../images/projets/terrapolis/Architecture.png" alt="Schéma de communication Python vers Unity">
+                    <figcaption>Python gère la logique (Backend) et Unity gère l'affichage (Frontend AR).</figcaption>
+                </figure>
+
+                <div class="text-block-wrapper">
+                    <div class="text-block">
+                        <h3>Le Cerveau (Python)</h3>
+                        <p>
+                            C'est le moteur de simulation. Il ne gère pas de graphismes 3D, mais des <strong>données</strong>.
+                            L'application Python calcule en temps réel :
+                        </p>
+                        <ul>
+                            <li>Le taux de pollution et la qualité de l'air.</li>
+                            <li>Les ressources disponibles (énergie, eau, matériaux).</li>
+                            <li>Le score de "Viabilité" globale de la ville.</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-block">
+                        <h3>Les Yeux (Unity AR)</h3>
+                        <p>
+                            L'interface utilisateur se fait en <strong>Réalité Augmentée</strong>.
+                            Le joueur scanne une image cible (marker) pour faire apparaître le terrain en 3D.
+                            Il sélectionne des bâtiments à construire, et Unity envoie la requête à Python pour valider la construction selon les ressources disponibles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Gameplay & Mécaniques</h2>
+                
+                <div class="text-block-wrapper">
+                    <div class="text-block">
+                        <h3>Construction & Gestion</h3>
+                        <p>
+                            Le joueur doit placer stratégiquement des zones résidentielles, des industries et des parcs. 
+                            Chaque bâtiment a un coût et un impact. Une usine rapporte de l'argent mais génère de la pollution. Un parc coûte cher mais améliore la viabilité.
+                        </p>
+                    </div>
+
+                    <div class="text-block">
+                        <h3>La Viabilité avant tout</h3>
+                        <p>
+                            Contrairement aux "City Builders" classiques, le but n'est pas l'expansion infinie, mais la <strong>survie</strong>. 
+                            Si les indicateurs calculés par Python tombent dans le rouge (trop de pollution, pas assez d'énergie), la ville s'effondre et la partie est perdue.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Stack Technique</h2>
+                <div class="text-block-wrapper">
+                    <div class="text-block etude">
+                        <h3>Technologies Clés</h3>
+                        <ul>
+                            <li><strong>Python :</strong> Logique backend, calculs mathématiques, gestion des états.</li>
+                            <li><strong>Unity (C#) :</strong> Moteur 3D, gestion de la Réalité Augmentée (Vuforia/AR Foundation).</li>
+                            <li><strong>Sockets TCP/UDP :</strong> Protocole de communication pour l'échange de données en temps réel entre les deux apps.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Galerie du Projet</h2>
+                <p>Aperçu des deux interfaces : Contrôle des données et Visualisation AR.</p>
+                
+                <div class="text-block-wrapper">
+                    <div class="gallery-item">
+                        <img src="../images/projets/terrapolis/PythonInterface.png" alt="Interface de gestion Python" class="gallery-img">
+                        <p class="gallery-caption">Le tableau de bord Python : graphiques et données en temps réel.</p>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="../images/projets/terrapolis/UnityAR.png" alt="Vue AR de la ville" class="gallery-img">
+                        <p class="gallery-caption">Rendu Unity : La ville prend vie sur la table.</p>
+                    </div>
+
+                    <div class="gallery-item" style="grid-column: span 2;"> <img src="../images/projets/terrapolis/Construction.png" alt="Construction d'un bâtiment" class="gallery-img">
+                        <p class="gallery-caption">Phase de construction : placement d'un nouveau module urbain.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Démonstration</h2>
+                <p>Le système en action : synchronisation entre Python et Unity.</p>
+                
+                <div class="video-wrapper">
+                    <div class="video-container">
+                        <iframe 
+                            class="video-iframe"
+                            src="https://www.youtube.com/embed/VOTRE_ID_VIDEO_TERRAPOLIS" 
+                            title="Démonstration Terrapolis" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Ressources</h2>
+                <div class="text-block-wrapper">
+                    
+                    <a href="https://github.com/Lecureur-Arthur" target="_blank"> <div class="text-block-link">
+                            <h3>Code Source (GitHub)</h3>
+                            <p>Consultez les scripts Python de simulation et le projet Unity AR.</p>
+                            <p class="link link-arrow">Voir le repository &rarr;</p>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer></footer>
+
+    <script src="../js/layout.js"></script>
+
+</body>
+</html>
