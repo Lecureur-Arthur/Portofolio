@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solas - LECUREUR Arthur</title>
+    <title>SOLAS (VR) - Arthur Lecureur</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -14,35 +19,188 @@
 
         <section class="hero">
             <div class="container">
-            <h1>SOLAS</h1>
-            <p>Dans ce projet, vous explorez notre système solaire en VR dans un vaisseau spatial.</p>
-            <figure>
-                <img src="../images/Project/SOLAS/AllPlanetes.png" alt="Vue des planètes">
-                <figcaption></figcaption>
-            </figure>
+                <h1>SOLAS</h1>
+                <p class="hero-subtitle">
+                    Exploration du Système Solaire en Réalité Virtuelle
+                </p>
+                <figure class="figure-hero">
+                    <img src="../images/projets/solas/AllPlanetes.png" alt="Vue d'ensemble du système solaire dans SOLAS">
+                    <figcaption>Une aventure éducative et immersive développée à l'ENSIM.</figcaption>
+                </figure>
+            </div>
+            
+            <div class="text-block">
+                <h3>Le Scénario</h3>
+                <p>
+                    Vous incarnez un pilote spatial traversant une ceinture d'astéroïdes particulièrement dense. Soudain, c'est l'impact : votre vaisseau subit de lourds dommages.
+                    Lumières rouges, alarmes... Votre seule chance de survie est d'explorer les planètes environnantes pour retrouver les pièces manquantes (moteur, batterie, GPS...) et réparer votre appareil pour poursuivre votre voyage.
+                </p>
+                <p>
+                    Heureusement, vous n'êtes pas seul : un petit robot compagnon vous guide et vous donne des informations sur votre environnement.
+                </p>
             </div>
         </section>
 
         <section class="hero">
             <div class="container">
-            <h2>Détails du jeu</h2>
-            <p>Dans "SOLAS", vous devrez explorer notre système solaire afin de reconstituer votre vaisseau suite à une collision contre un astéroïde dans la ceinture d'astéroïdes.</p>
-            <figure>
-                <img src="../images/Project/SOLAS/CeintureAsteroid.png" alt="Ceinture d'astéroïdes" srcset="">
-            </figure>
+                <h2>Votre Mission : Reconstruire le Vaisseau</h2>
+                <p>Chaque planète abrite une ressource vitale ou une pièce mécanique essentielle. Le joueur doit naviguer de l'une à l'autre pour progresser.</p>
+                
+                <figure class="figure-content">
+                    <img src="../images/projets/solas/Planet.png" alt="Alignement des planètes">
+                    <figcaption>Comparaison des échelles et textures des planètes intégrées dans le jeu.</figcaption>
+                </figure>
+
+                <div class="text-block-wrapper">
+                    <div class="text-block">
+                        <h3>Mars & Jupiter</h3>
+                        <p>
+                            Première étape critique. Sur <strong>Mars</strong>, vous devrez trouver des réserves d'<strong>Eau</strong> dans les bases martiennes. 
+                            Sur <strong>Jupiter</strong>, au cœur des éclairs et de la tempête, c'est une <strong>Batterie</strong> de haute capacité qui vous attend.
+                        </p>
+                    </div>
+
+                    <div class="text-block">
+                        <h3>La Lune & Le GPS</h3>
+                        <p>
+                            Impossible de naviguer sans repères. Une escale sur la base lunaire est nécessaire pour récupérer le <strong>système GPS</strong>, débloquant ainsi l'accès aux planètes plus lointaines.
+                        </p>
+                    </div>
+                    
+                    <div class="text-block">
+                        <h3>Les Géantes Gazeuses</h3>
+                        <p>
+                            Le voyage continue vers <strong>Saturne</strong> pour récupérer des <strong>Panneaux Solaires</strong> en évitant ses anneaux, puis vers <strong>Uranus</strong> pour les capsules de cryogénisation.
+                        </p>
+                    </div>
+
+                    <div class="text-block">
+                        <h3>L'Objectif Final : Neptune</h3>
+                        <p>
+                            L'ultime pièce du puzzle : le <strong>Réacteur Anti-Matière</strong> situé sur <strong>Neptune</strong>. Une fois installé, il permettra au vaisseau de quitter le système solaire pour de bon.
+                        </p>
+                    </div>
+                </div>
+
+                <figure>
+                    <img src="../images/projets/solas/CeintureAsteroid.png" alt="La ceinture d'astéroïdes">
+                    <figcaption>Le point de départ de l'aventure : la dangereuse ceinture d'astéroïdes.</figcaption>
+                </figure>
             </div>
         </section>
 
         <section class="hero">
             <div class="container">
-                <h2>Les différents liens pour le projet</h2>
+                <h2>Les Coulisses du Développement</h2>
+                <p>Projet réalisé en équipe de 4 étudiants (avec Pauline De Vittori, Thibaut Platet et Adélie Brunel).</p>
+                
+                <div class="text-block-wrapper">
+                    <div class="text-block etude">
+                        <h3>Mon Rôle (Arthur Lecureur)</h3>
+                        <ul>
+                            <li><strong>Modélisation 3D (Blender) :</strong> Conception de la salle des machines, des couloirs du vaisseau, de la citerne d'eau et du robot cuisinier.</li>
+                            <li><strong>Narration & Audio :</strong> Enregistrement et traitement des voix off (Reaper) pour les planètes Mars, Neptune et les scènes d'intro/fin.</li>
+                            <li><strong>Unity :</strong> Intégration des assets et gestion des scènes.</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-block etude">
+                        <h3>Stack Technique</h3>
+                        <ul>
+                            <li><strong>Moteur :</strong> Unity (C#) pour la logique VR et l'interaction.</li>
+                            <li><strong>3D :</strong> Blender pour la modélisation du vaisseau et des objets.</li>
+                            <li><strong>Collaboration :</strong> Gestion de projet via GitHub et diagrammes de Gantt.</li>
+                            <li><strong>Matériel :</strong> Optimisé pour casque Oculus/Meta Quest.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Architecture & Modélisation 3D</h2>
+                <p>Conception de la structure du vaisseau et création des assets modulaires sous Blender.</p>
+                
+                <h3 class="section-subtitle">Structure du Vaisseau</h3>
+                <div class="text-block-wrapper">
+                    <div class="gallery-item">
+                        <img src="../images/projets/solas/Vaisseau_devant_V1.png" alt="Vue latérale du vaisseau" class="gallery-img">
+                        <p class="gallery-caption">Vue latérale de la structure complète.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../images/projets/solas/Vaisseau_cote_V1.png" alt="Vue arrière du vaisseau" class="gallery-img">
+                        <p class="gallery-caption">Vue arrière et détails des moteurs.</p>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle large-gap">Détails des Modules (Blender)</h3>
+                <div class="text-block-wrapper">
+                    <div class="gallery-item">
+                        <img src="../images/projets/solas/ModelFenetreV2_2.png" alt="Module Fenêtre V2" class="gallery-img-blender">
+                        <p class="gallery-caption-small">Module Couloir (Extérieur)</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../images/projets/solas/ModelFenetreV2_1.png" alt="Module Fenêtre V2 Intérieur" class="gallery-img-blender">
+                        <p class="gallery-caption-small">Module Couloir (Intérieur)</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../images/projets/solas/ModelPourPorte.png" alt="Module Porte" class="gallery-img-blender">
+                        <p class="gallery-caption-small">Module Sas/Porte</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../images/projets/solas/ModelFentreV1.png" alt="Module Fenêtre V1" class="gallery-img-blender">
+                        <p class="gallery-caption-small">Prototype Fenêtre V1</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Démonstration Vidéo</h2>
+                <p>Plongez au cœur de l'expérience SOLAS.</p>
+                
+                <div class="video-wrapper">
+                    <div class="video-container">
+                        <iframe 
+                            class="video-iframe"
+                            src="https://www.youtube.com/embed/dX2e2C_3uNA" 
+                            title="Vidéo Gameplay SOLAS" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Présentation & Événement</h2>
+                <p>
+                    Le projet SOLAS a été sélectionné pour être présenté lors des <strong>Portes Ouvertes de l'ENSIM 2025</strong>. 
+                    Nous avons conçu une affiche dédiée pour le stand de démonstration, permettant aux visiteurs de découvrir le concept avant de s'immerger dans la VR.
+                </p>
+                
+                <figure class="figure-poster">
+                    <img src="../images/projets/solas/Poster.png" alt="Affiche de présentation SOLAS aux Portes Ouvertes" class="img-poster">
+                    <figcaption>Affiche réalisée pour le stand de démonstration à l'ENSIM.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Ressources</h2>
                 <div class="text-block-wrapper">
                     
                     <a href="https://github.com/Lecureur-Arthur/SOLAS" target="_blank">
                         <div class="text-block-link">
-                            <h3>GitHub</h3>
-                            <p>Pour plus de détails sur le développement de ce projet, consultez le lien vers mon GitHub :</p>
-                            <p class="link">Voir le projet sur GitHub</p>
+                            <h3>Code Source (GitHub)</h3>
+                            <p>Accédez au projet Unity complet, aux scripts C# et à l'historique de développement.</p>
+                            <p class="link link-arrow">Voir le repository &rarr;</p>
                         </div>
                     </a>
                     
