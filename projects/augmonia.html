@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Augmonia (AR) - Arthur Lecureur</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    
+    <header class="navbar"></header>
+
+    <main>
+
+        <section class="hero">
+            <div class="container">
+                <h1>Augmonia</h1>
+                <p class="hero-subtitle">
+                    Survie & Hasard en Réalité Augmentée
+                </p>
+                <figure class="figure-hero">
+                    <img src="../images/projets/augmonia/Combat.png" alt="Combat contre des araignées en AR dans un salon">
+                    <figcaption>Votre environnement réel devient le terrain de jeu.</figcaption>
+                </figure>
+            </div>
+            
+            <div class="text-block">
+                <h3>Le Concept</h3>
+                <p>
+                    <strong>Augmonia</strong> transforme votre salon, votre bureau ou votre jardin en un champ de bataille imprévisible. 
+                    Le but est simple : survivre le plus longtemps possible à des vagues d'ennemis (araignées) qui surgissent de votre propre environnement.
+                    Mais attention, votre destin ne dépend pas que de votre visée : il dépend du <strong>Dé du Destin</strong>.
+                </p>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Mécaniques de Jeu</h2>
+                <p>Une boucle de gameplay basée sur l'adaptation et la chance.</p>
+                
+                <div class="text-block-wrapper">
+                    <div class="text-block">
+                        <h3>Scan & Ancrage</h3>
+                        <p>
+                            Le jeu commence par une phase de scan (Plane Detection). 
+                            L'application analyse la géométrie de la pièce pour détecter le sol et les surfaces planes, permettant aux ennemis de se déplacer de manière réaliste dans votre espace.
+                        </p>
+                    </div>
+
+                    <div class="text-block">
+                        <h3>Le Dé du Destin</h3>
+                        <p>
+                            C'est le cœur du gameplay. À intervalle régulier, vous devez lancer un dé virtuel. 
+                            Le résultat détermine la prochaine vague : un bonus de munition, un kit de soin... ou une horde d'araignées géantes !
+                        </p>
+                    </div>
+
+                    <div class="text-block">
+                        <h3>Défense & Survie</h3>
+                        <p>
+                            Armé de votre téléphone comme d'une tourelle, vous devez viser physiquement et éliminer les menaces avant qu'elles ne vous atteignent. 
+                            Le jeu exploite le gyroscope et la position du joueur pour une immersion totale.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Galerie In-Game</h2>
+                <p>Aperçu de l'interface et de l'intégration AR.</p>
+                
+                <div class="text-block-wrapper">
+                    <div class="gallery-item">
+                        <img src="../images/projets/augmonia/Menu.png" alt="Menu Principal" class="gallery-img">
+                        <p class="gallery-caption">L'interface d'accueil.</p>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="../images/projets/augmonia/Scan.png" alt="Détection des plans" class="gallery-img">
+                        <p class="gallery-caption">Phase de détection de l'environnement.</p>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="../images/projets/augmonia/Dice.png" alt="Lancer du dé" class="gallery-img">
+                        <p class="gallery-caption">Le Dé du Destin en action.</p>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="../images/projets/augmonia/Combat.png" alt="Combat AR" class="gallery-img">
+                        <p class="gallery-caption">Défense contre les vagues d'ennemis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Coulisses Techniques</h2>
+                <p>Projet réalisé en binôme (avec Tournay).</p>
+                
+                <div class="text-block-wrapper">
+                    <div class="text-block etude">
+                        <h3>Stack Technique</h3>
+                        <ul>
+                            <li><strong>Moteur :</strong> Unity 6 (2025)</li>
+                            <li><strong>AR :</strong> AR Foundation / ARCore (Android)</li>
+                            <li><strong>Features :</strong> Plane Detection, Raycasting, Physics.</li>
+                            <li><strong>Langage :</strong> C# (Gestion des spawners, IA des ennemis, Physique du dé).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Ressources</h2>
+                <div class="text-block-wrapper">
+                    
+                    <a href="https://github.com/Lecureur-Arthur/2025_AR_TOURNAY_LECUREUR" target="_blank">
+                        <div class="text-block-link">
+                            <h3>Code Source (GitHub)</h3>
+                            <p>Explorez l'implémentation des mécaniques AR et des scripts C#.</p>
+                            <p class="link link-arrow">Voir le repository &rarr;</p>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer></footer>
+
+    <script src="../js/layout.js"></script>
+
+</body>
+</html>
