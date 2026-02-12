@@ -616,3 +616,30 @@ div[style*="margin-top: 25px;"] a:hover {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+/* =========================================
+   CORRECTION CONTRASTE & LISTES
+   ========================================= */
+
+/* Force le texte des listes à être clair */
+.text-block ul li {
+    color: #e2e8f0; /* Gris très clair (presque blanc) */
+    margin-bottom: 8px; /* Un peu d'espace entre les puces */
+    line-height: 1.6;
+}
+
+/* Met en valeur les mots en gras (ex: "Simulation :") */
+.text-block ul li strong {
+    color: #ffffff; /* Blanc pur */
+    font-weight: 600;
+}
+
+/* Optionnel : Change la couleur des puces (points) en doré */
+.text-block ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.text-block ul li::marker {
+    color: var(--accent-gold);
+}
